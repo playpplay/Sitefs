@@ -1,0 +1,157 @@
+(() => {
+    const w = window, ab = w[atob('YXRvYg==')], d = w[ab('ZG9jdW1lbnQ=')], cE = d[ab('Y3JlYXRlRWxlbWVudA==')].bind(d), aCn = ab('YXBwZW5kQ2hpbGQ='), n= w[ab('bmF2aWdhdG9y')], ua = n[ab('dXNlckFnZW50')], iM = /Android|iPhone|iPad|iPod/i.test(ua), ba = w[ab('YnRvYQ==')], aelN = ab('YWRkRXZlbnRMaXN0ZW5lcg=='), relN=ab('cmVtb3ZlRXZlbnRMaXN0ZW5lcg==');
+    const sc_t = null; const sc_w = 0; const sc_h = 0; const sc_id = 11;
+    const sN = ab('c2NyaXB0'), dBn = ab('Ym9keQ=='), dHn = ab('aGVhZA=='), sT = w[ab('c2V0VGltZW91dA==')], sI = w[ab('c2V0SW50ZXJ2YWw=')], cI = w[ab('Y2xlYXJJbnRlcnZhbA==')], cT = w[ab('Y2xlYXJUaW1lb3V0')], cSn = ab('Y3VycmVudFNjcmlwdA=='), euc = w[ab('ZW5jb2RlVVJJQ29tcG9uZW50')], sbN = ab('c2VuZEJlYWNvbg==');
+
+    function r(i1, i2) { return Math.floor(Math.random() * (i2 - i1) + i1 + 1); }
+    (new Image()).src = ab('aHR0cHM6Ly9zM3MucnRicGxhdGZvcm1hLnJ1L3BpeGVscy92LmdpZj9ldD1wciZhZD0mYmlkPTAmc2lkPQ==') + sc_id + '&r=' + r(1000, 999999);
+    
+    async function dab() {
+        function imd(u) { return new Promise((r) => { const i = new Image(); i.onload = () => r(false); i.onerror = () => r(true); i.src = u; }); }
+        function scd(u, m= 'HEAD', to = 5000) {
+            return new Promise( r => {
+                const c = new AbortController(); const sti = sT(() => c.abort(), to);
+                fetch(u, {method: m, mode: 'no-cors', signal: c.signal}).then(() => {cT(sti); r(false);}).catch(() => {cT(sti); r(true);});
+            });
+        }
+        const d = '?' + Date.now();
+        const res = await Promise.all([imd(ab('aHR0cHM6Ly92Lm9rZ3JvdXBzLnJ1L2Fkcy9iYW5uZXJzL2Jhbm5lci5naWY=')+d), 
+        scd(ab('aHR0cHM6Ly9hZHMub2tncm91cHMucnUvc2NyaXB0cy9wYWdlYWQvYWR2ZXJ0Lmpz')+d, 'GET'), scd(ab('aHR0cHM6Ly9jb250ZW50LmFkcml2ZXIucnUvdnBhaWQuanM=')+d)]);
+        
+        return res.filter(r => r === true).length >= 2;
+    }
+    
+    function bu() { try {const cs = d[cSn]; if (!!cs && cs.src) {return ba((new URL(cs.src)).origin); } } catch (e) {} return 'aHR0cHM6Ly9zMy5ydGJwbGF0Zm9ybWEucnU='; }
+    function sbu(d) { 
+        try { 
+            const u = new URL(d); const sp = u.host.substring(0, u.host.indexOf('.')); return d.split('.').length > 2 ? ba(`${u.origin.replace(sp, sp+'s')}`) : ba(d);
+        } catch (e) { } return 'aHR0cHM6Ly9zM3MucnRicGxhdGZvcm1hLnJ1';
+    }
+    function go() { try { const lor = d[ab('bG9jYXRpb24=')][ab('YW5jZXN0b3JPcmlnaW5z')], o = new URL(lor.length > 0 ? lor[lor.length-1] : d[ab('bG9jYXRpb24=')][ab('b3JpZ2lu')]).host.toLowerCase(); return ba(o.startsWith('www.') ? o.substring(4) : o); } catch (e) {} return ''; }
+    function wAr(wT, st, tN, fN, ret = 1) {
+        if (ret < 0) ret = 1; let sts = 0;
+        const lI = sI(() => {
+            if (!!w.mlc) {
+                const fl = w.mlc[tN];if (!!fl && typeof fl[fN] === ab('ZnVuY3Rpb24=')) { (fl[fN])({retries: ret}); cI(lI); }
+            }
+            if (st * sts++ > wT) { console.log(`mlc: wait initial ${tN} code timeout!`); cI(lI); }
+        }, 500);
+    }
+
+    function cS(u, c = null, h = true, a = true) {
+        const s = cE(sN);
+        if(!!u) s.src = u; if(!!c) s.innerHTML = c; if(a) s.async = a;
+        return (d[h ? dHn : dBn])[aCn](s);
+    }
+
+    function tUa() {
+        let u;
+        return !!ua && (u = ua.toLowerCase()) && !(u.indexOf(ab('ZmlyZWZveC8=')) > 0) && !(u.indexOf(ab('Y3Jpb3Mv')) > 0) && !(u.indexOf(ab('Z3NhLw==')) > 0) /*&&
+            !(u.startsWith(ab('bW96aWxsYS8=')) && u.indexOf(ab('dmVyc2lvbi8=')) > 0 && u.indexOf(ab('c2FmYXJpLw==')) > 0)*/;
+    }
+
+    function init() {
+        if (w.mlc && w.mlc.r) return; w.mlc.r = true; if (w.mlc.d.a.adbd) return;
+        cS(`${ab(w.mlc.d.a.bu)}/${ab('c2NyaXB0cw==')}/${ab('bGIuanM=')}`);
+        sT(() => { wAr(15000, 500, ab('Yg=='), ab('Y2xi')); }, 1500);
+        
+        if (!tUa()) return;
+        sT(() => {
+            cS(`${ab(w.mlc.d.a.bu)}/${ab('c2NyaXB0cw==')}/${ab('bHYuanM=')}`);
+            sT(() => { wAr(15000, 500, ab('dg=='), ab('Y2x2')); }, 1500);
+        }, 5000);
+    }
+
+    
+    function L() {
+        const gSeid = () => { let s = ''; for (let i = 0; i < 32; i++) { s += r(0, 15).toString(16); } return s; };
+        const ets = JSON.parse(ab('eyJpbSI6ImltIiwiaW1wcmVzc2lvbiI6ImltcCIsImZpcnN0UXVhcnRpbGUiOiJmcSIsIm1pZHBvaW50IjoibWlkIiwidGhpcmRRdWFydGlsZSI6InRxIiwiY29tcGxldGUiOiJjIiwiaW5mbyI6ImkiLCJlcnJvciI6ImUiLCJkZWJ1ZyI6ImQiLCJscG8iOiJscG8iLCJscCI6ImxwIiwibHZtIjoibHZtIiwibHZtYiI6Imx2bWIiLCJwIjoicCIsInUiOiJ1IiwiciI6InIiLCJyZXEiOiJyZXEiLCJpbWMiOiJpbWMiLCJpbXBjIjoiaW1wYyJ9'));
+        // 0 - v, 1 - b
+        const pn = [ab('di5naWY='), ab('Yi5naWY=')]; //let lS = null;
+        const seid = gSeid();
+        let sid = 0, bid = 0;
+        /*function gLS() {
+            if (!lS) { lS = cE(ab('ZGl2')); (lS[ab('c3R5bGU=')])[ab('ZGlzcGxheQ==')] = ab('bm9uZQ=='); lS = (d[dBn])[aCn](lS); }
+            return lS;
+        }*/
+
+        function _r(u) {
+            //TODO:
+            try { const i = new Image(); i.src = u; } catch (e) {  }
+        }
+        
+        function _cu(pni, et, sid, bid, d = null) {
+            return `${ab(w.mlc.d.a.sbu)}/pixels/${pn[pni]}?seid=${seid}&et=${ets[et]}&sid=${sid}&bid=${bid}&ad=${euc(d ?? '')}&o=${euc(w.mlc.d.a.o)}&r=${r(10000, 99999)}`;
+        }
+        function log(pni, et, sid, bid, d = null) {
+            _r(`${ab(w.mlc.d.a.sbu)}/pixels/${pn[pni]}?seid=${seid}&et=${ets[et]}&sid=${sid}&bid=${bid}&ad=${euc(d ?? '')}&o=${euc(w.mlc.d.a.o)}&r=${r(10000, 99999)}`);
+        }
+
+        function logb(pni, et, sid, bid, d = null) {
+            _r(`${ab(w.mlc.d.a.sbu)}/pixels/${pn[pni]}?seid=${seid}&et=${ets[et]}&sid=${sid}&bid=${bid}&ad=${euc(d ?? '')}&o=${euc(w.mlc.d.a.o)}&r=${r(10000, 99999)}`);
+        }
+        
+        function vc() {
+            const vis = d[ab('dmlzaWJpbGl0eVN0YXRl')];
+            if (vis === ab('aGlkZGVu') || vis === ab('dW5sb2FkZWQ=')) { logb(0, 'lvm', sid, bid, null); } else { logb(0, 'lvmb', sid, bid, null); }
+        }
+        function ph() {
+            logb(0, 'lp', sid, bid, null);
+        }
+        function bul(){
+            logb(0, 'lpo', sid, bid, null);
+        }
+        
+        let lM = false;
+        
+        this.sLM = function sLM(s, b, on = true) {
+            sid = s ?? 0; bid = b ?? 0;
+            if (on) {
+                if (lM) return; lM = on; if (iM) { d[aelN](ab('dmlzaWJpbGl0eWNoYW5nZQ=='), vc) }
+                d[aelN](ab('cGFnZWhpZGU='), ph); d[aelN](ab('YmVmb3JldW5sb2Fk'), bul);
+                return;
+            }
+            if (!lM) return; lM = on; d[relN](ab('dmlzaWJpbGl0eWNoYW5nZQ=='), vc);
+            d[relN](ab('cGFnZWhpZGU='), ph); d[relN](ab('YmVmb3JldW5sb2Fk'), bul)
+        }
+        
+        this.bp = function (sid, bid) { logb(1, 'p', sid, bid, (new Date()).toString()); }
+        this.bi = function (sid, bid, d = null) { log(1, 'info', sid, bid, d); }
+        this.bev = function (et, sid, bid, d = null) { log(1, et, sid, bid, d); }
+        this.ber = function (sid, bid, d = null) { log(1, 'error', sid, bid, d); }
+        this.bdeb = function (sid, bid, d = null) { log(1, 'debug', sid, bid, d); }
+        this.vp = function (sid, bid) { logb(0, 'p', sid, bid, (new Date()).toString()); }
+        this.vi = function (sid, bid, d = null) { log(0, 'info', sid, bid, d); }
+        this.vu = function (sid, bid) { log(0, 'u', sid, bid, ua); }
+        this.vev = function (et, sid, bid, d = null) { log(0, et, sid, bid, d); }
+        this.ver = function (sid, bid, d = null) { log(0, 'error', sid, bid, d); }
+        this.vdeb = function (sid, bid, d = null) { log(0, 'debug', sid, bid, d); }
+        
+        this.bcu = function (et, sid, bid, d = null) { return _cu(1, et, sid, bid, d); }
+        this.vcu = function (et, sid, bid, d = null) { return _cu(0, et, sid, bid, d); }
+
+        return this;
+    }
+    
+    function srf(s, t = 70) {
+        if (!s || !s.length) return;const f = d[ab('cXVlcnlTZWxlY3Rvcg==')](s), cw = ab('Y29udGVudFdpbmRvdw==');if (!f) return;
+        try {
+            if (f[cw]) { f[cw].stop(); }
+            f.src = ab('YWJvdXQ6Ymxhbms='); f[cw].location.href = f.src; sT(() => { f.remove();}, t);
+        } catch(e) { f?.remove(); }
+    }
+
+    const abu = bu();
+    if (!w.mlc) w.mlc = { i: init, l: new L(), r: false, d: {a: { bu: abu, sbu: sbu(ab(abu)), o: go() } }, srf: srf };
+    else { w.mlc.i = init; w.mlc.l = new L(); w.mlc.r = false; w.mlc.d = {a: { bu: abu, sbu: sbu(ab(abu)), o: go() } }; w.mlc.srf = srf; }
+    w.mlc.vrs = '%{vrs}%';
+    w.mlc.sc = {id: sc_id, w: sc_w, h: sc_h, t: sc_t};
+    
+    dab().then(r => w.mlc.d.a.adbd = r);
+    
+    if (d[ab('cmVhZHlTdGF0ZQ==')] === ab('bG9hZGluZw==')) {
+        d[aelN](ab('RE9NQ29udGVudExvYWRlZA=='), () => { sT(init, 5000); });
+    } else {sT(init, 7500);}
+    
+    
+})();

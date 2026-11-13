@@ -1,0 +1,91 @@
+(() => {
+    
+    const w = window, ab = w[atob('YXRvYg==')], d = w[ab('ZG9jdW1lbnQ=')], cE = d[ab('Y3JlYXRlRWxlbWVudA==')].bind(d), sn = ab('c3R5bGU='), fid = ab('bGJm');
+    const fS = cE(sn), p = w[ab('SlNPTg==')][ab('cGFyc2U=')], sT = w[ab('c2V0VGltZW91dA==')], cT = w[ab('Y2xlYXJUaW1lb3V0')], ft = w[ab('ZmV0Y2g=')];
+    fS[ab('dGV4dENvbnRlbnQ=')] = ab('LmxiZnN0aSB7IGRpc3BsYXk6IGJsb2NrOyBwb3NpdGlvbjogZml4ZWQ7IGJvdHRvbTogMTBweDsgbGVmdDogMTBweDsgdmlzaWJpbGl0eTogaGlkZGVuOyB6LWluZGV4OiA5OTk5OTsgfQ==');
+    d[ab('aGVhZA==')][ab('YXBwZW5kQ2hpbGQ=')](fS);
+
+    async function clb(o) {
+        const m = w.mlc;
+        if (!m || !m.d || !m.d.a?.bu || !m.l || !m.srf) return;
+        const l = m.l, dm = ab(m.d.a.bu), srf = m.srf;
+        const cid = m.sc.id;
+
+        async function rBs() {
+            const r = await ft(`${dm}/${ab('YXBpL3BhcmFtcw==')}/${cid}/${ab('YnM=')}`);
+            if (!r[ab('b2s=')]) return {};return p(ab(await r[ab('dGV4dA==')]()));
+        }
+
+        if (w.mlc?.d?.a?.adbd) return;
+        const bsI = await rBs(),sid = bsI.id, bs = bsI.bs;if (!bs||!bs.length) {return;}
+
+        function fF(b, f, script) {
+            let doc = f[ab('Y29udGVudFdpbmRvdw==')] || f[ab('Y29udGVudERvY3VtZW50')];
+            if (doc.document) {doc = doc.document;}
+            const s = doc.createElement('style');
+            s.textContent = 'html, body { margin: 0;padding: 0;overflow: hidden;width: 100%;height: 100%;}';
+            const mS = doc.createElement('script');
+            mS.id = 'mainScript';mS.src = `${dm}/scripts/b.b.js`;
+            const ns = doc.createElement('noscript');
+            ns.textContent = b.c;
+            const hS = doc.createElement('script');
+            hS.id = 'helperScript';hS.type = 'module';hS.textContent = script;
+            doc.head.appendChild(s);doc.head.appendChild(mS);doc.body.appendChild(ns);doc.body.appendChild(hS);
+        }
+        
+        function crF(b, sid, i) {
+            const f = cE('iframe');
+            f.id = fid+i;
+            f[sn].width = b.w + 'px'; f[sn].height = b.h + 'px';
+            f.className = fid+'sti';
+            const pcu = l.bcu('imc', sid, b.id);
+            const script = `
+          import init, { do_some_magic } from '${dm}/scripts/v_p.js';
+          async function main() {
+            try {
+                window.mlc_pc = "${pcu}";
+                await init(); do_some_magic("${dm}",${sid}, ${i}, ${b.w}, ${b.h}); setTimeout(lbic, 500);
+            } catch(e) {
+                window.postMessage({id: 'lb', ok: false}, '*'); window.parent?.postMessage({id: 'lb', ok: false}, '*');
+            }
+          }
+          main();`;
+            
+            d[ab('Ym9keQ==')][ab('YXBwZW5kQ2hpbGQ=')](f);
+            fF(b, f, script);
+            return f;
+        }
+
+        function rAw(b, resolve, interval) {
+            cT(interval);
+            sT(resolve, b.d);
+        }
+
+        function pB(b, sid, i) {
+            return new Promise(resolve => {
+                const f = crF(b, sid, i); let int; l.bev('r', sid, b.id)
+                const mh = event => {
+                    if (event.data.id === 'lb') {
+                        w[ab('cmVtb3ZlRXZlbnRMaXN0ZW5lcg==')](ab('bWVzc2FnZQ=='), mh);
+                        if (event.data.ok) {l.bev('im', sid, b.id);rAw(b, resolve, int);}
+                        else {cT(int);l.ber(sid, b.id, ab('ZXJyb3IgZnJvbSBmcmFtZQ=='));resolve();}
+                    }
+                }
+                int = sT(() => {w[ab('cmVtb3ZlRXZlbnRMaXN0ZW5lcg==')](ab('bWVzc2FnZQ=='), mh);l.ber(sid, b.id, ab('dGltZW91dA=='));resolve();}, 15000);
+                w[ab('YWRkRXZlbnRMaXN0ZW5lcg==')](ab('bWVzc2FnZQ=='), mh);
+            });
+        }
+
+        const ret = !!o ? o[ab('cmV0cmllcw==')] || 1 : 1;
+        let gI = 0;
+        for (let i = 0; i < ret; i++) {
+            for (const b of bs) {
+                if (w.mlc?.d?.a?.adbd) { l.bi(sid, b.id, 'abort by adbd'); break; }
+                try { await pB(b, sid, gI); } catch(e) {l.ber(sid, b.id, e?.message);}
+                const rfid = fid+gI;sT(() => {srf(ab('Iw==')+rfid);}, 2000);gI++;
+            }
+        }
+    }
+
+    if (!w.mlc) w.mlc = {};if (!w.mlc.b) w.mlc.b = {};w.mlc.b.clb = clb;
+})();
